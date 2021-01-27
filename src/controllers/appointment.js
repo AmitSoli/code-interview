@@ -5,9 +5,7 @@ const AppointmentRequest = require('../models/appointmentRequest')
 
 const loadProviders = () => {
     try {
-        const dataBuffer = fs.readFileSync('C:\\workspace\\vim\\code-interview\\providers\\providers.json')
-        //C:\workspace\vim\code-interview\providers\providers.json
-      //  vim\code-interview\providers\providers.json
+        const dataBuffer = fs.readFileSync('..\\..\\..\\vim\\code-interview\\providers\\providers.json')
         console.log('opened providers  0')
       
         const dataJSON = dataBuffer.toString()
