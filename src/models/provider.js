@@ -4,13 +4,13 @@ const validator = require('validator')
 const Provider = mongoose.model('Provider', {
     name: {
         type: String,
-        required: true,
     },
     specialties: [{
         type: String
     }],
     availableDates:[{
-        fro
+        from: Date,
+        to: Date
     }]
 })
 
