@@ -52,9 +52,20 @@ exports.getAppointments = async (req, res) => {
         const minScore = req.query.minScore
         const specialty = req.query.specialty
         const requestedDate = req.query.date
-        
+        if (!specialty){
+            return res.status(400).send()
+        }
+        var regExp = /[a-zA-Z]/g;
+                    
+        if(regExp.test(requestedDate)){
+            return res.status(400).send()
+        }
+        if (!specialty){
+            return res.status(400).send()
+        }
 
-        console.log(minScore,specialty,requestedDate)
+        
+        //console.log(minScore,specialty,requestedDate)
         const providers = loadProviders()
         let relevantProviders = providers.filter((provider) => {
             //console.log(provider)
